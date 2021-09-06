@@ -1,0 +1,55 @@
+{
+    "name": "SimpleDialogControls",
+    "maps": [
+        {
+            "name": "SimpleDialog",
+            "id": "0144c735-1ea8-43cb-80b0-b8440cc10896",
+            "actions": [
+                {
+                    "name": "Next",
+                    "type": "Button",
+                    "id": "40b7d24d-33db-4a66-a166-2f787cd97d2c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "8606fc36-db95-4098-bd61-4c2f8edd7917",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Next",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "02d2f24f-bd86-4f99-afe1-8af211dae0ea",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Next",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8fd18635-b034-4954-8b9c-acb45e0fb6fc",
+                    "path": "<Touchscreen>/primaryTouch/tap",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Next",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
