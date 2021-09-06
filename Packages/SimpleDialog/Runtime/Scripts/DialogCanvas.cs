@@ -16,9 +16,10 @@ namespace SimpleDialog
         [SerializeField] private Image rightImage;
         [SerializeField] private InputActionAsset inputAction;
         [SerializeField] private GameObject eventSystemPrefab;
-        private readonly Queue<DialogData> _conversationQueue = new Queue<DialogData>();
+        private readonly Queue<DialogDataStruct> _conversationQueue = new Queue<DialogDataStruct>();
         private bool _proceedToNextConversation;
         private Coroutine _coroutine;
+        private bool _skipText;
 
         private void OnEnable()
         {
@@ -28,12 +29,6 @@ namespace SimpleDialog
             var simpleDialogActionMap = inputAction.FindActionMap("SimpleDialog");
             var simpleDialogNextAction = simpleDialogActionMap.FindAction("Next");
             simpleDialogNextAction.performed += OnNextAction;
-            simpleDialogNextAction.started += OnNextAction;
-        }
-
-        private void OnNextAction(InputAction.CallbackContext obj)
-        {
-            _proceedToNextConversation = true;
         }
 
         private void OnDisable()
@@ -47,41 +42,68 @@ namespace SimpleDialog
             _coroutine = null;
         }
 
-        public void StartConversation(List<DialogData> newConversation)
+        private void OnNextAction(InputAction.CallbackContext obj)
         {
-            _conversationQueue.Clear();
-            _conversationQueue.EnqueueRange(newConversation);
-            _coroutine = StartCoroutine(ShowConversationForDuration());
+            if (_skipText)
+                _proceedToNextConversation = true;
+            else
+                _skipText = true;
         }
 
-        private IEnumerator ShowConversationForDuration()
+        public void StartConversation(DialogScriptableObject dialogScriptableObject)
         {
+            _coroutine = StartCoroutine(ShowConversationForDuration(dialogScriptableObject));
+        }
+
+        private IEnumerator ShowConversationForDuration(DialogScriptableObject dialogScriptableObject)
+        {
+            _conversationQueue.Clear();
+            _conversationQueue.EnqueueRange(dialogScriptableObject.Conversation);
+            dialogScriptableObject.dialogStart.Invoke();
             while (_conversationQueue.IsNotEmpty())
             {
                 var conversation = _conversationQueue.Dequeue();
                 ShowImage(conversation);
-                textUI.text = conversation.text;
-                //StartCoroutine(WaitFiveSeconds());
+                textUI.text = "";
+                var timeBank = 0f;
+                while (textUI.text.Length < conversation.text.Length)
+                {
+                    yield return null;
+                    if (conversation.charactersPerSecond == 0) continue;
+                    timeBank += Time.unscaledDeltaTime;
+                    var secondsPerCharacter = Mathf.Abs(1f / conversation.charactersPerSecond);
+                    while (timeBank >= secondsPerCharacter && textUI.text.Length < conversation.text.Length &&
+                           textUI.text.Length >= 0)
+                    {
+                        timeBank -= secondsPerCharacter;
+                        if (conversation.charactersPerSecond > 0)
+                            textUI.text += conversation.text[textUI.text.Length];
+                        else
+                            textUI.text = textUI.text.Remove(0, textUI.text.Length - 1);
+                    }
+
+                    if (!_skipText) continue;
+                    textUI.text = conversation.text;
+                    break;
+                }
+
+                _skipText = true;
                 yield return new WaitUntil(() => _proceedToNextConversation);
+                _skipText = false;
                 _proceedToNextConversation = false;
             }
+            dialogScriptableObject.dialogEnd.Invoke();
             Destroy(gameObject);
         }
 
-        private IEnumerator WaitFiveSeconds()
+        private void ShowImage(DialogDataStruct dialogDataStruct)
         {
-            yield return new WaitForSeconds(5);
-            _proceedToNextConversation = true;
-        }
-
-        private void ShowImage(DialogData dialogData)
-        {
-            leftImage.sprite = dialogData.sprite;
-            centerImage.sprite = dialogData.sprite;
-            rightImage.sprite = dialogData.sprite;
-            leftImage.enabled = dialogData.sprite && dialogData.side == DialogPlacement.Left;
-            centerImage.enabled = dialogData.sprite && dialogData.side == DialogPlacement.Center;
-            rightImage.enabled = dialogData.sprite && dialogData.side == DialogPlacement.Right;
+            leftImage.sprite = dialogDataStruct.sprite;
+            centerImage.sprite = dialogDataStruct.sprite;
+            rightImage.sprite = dialogDataStruct.sprite;
+            leftImage.enabled = dialogDataStruct.sprite && dialogDataStruct.side == DialogPlacementEnum.Left;
+            centerImage.enabled = dialogDataStruct.sprite && dialogDataStruct.side == DialogPlacementEnum.Center;
+            rightImage.enabled = dialogDataStruct.sprite && dialogDataStruct.side == DialogPlacementEnum.Right;
         }
     }
 }

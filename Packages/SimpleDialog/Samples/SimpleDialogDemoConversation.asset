@@ -15,8 +15,29 @@ MonoBehaviour:
   conversation:
   - sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
     side: 0
-    text: Hey, I'm a left knob talking for 5 seconds.
+    text: 'Hey, I''m the left knob.
+
+      Press next to skip typing.
+
+      Press
+      next to proceed to next conversation.'
+    charactersPerSecond: 50
   - sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
     side: 1
-    text: Hey, I'm a right knob talking for another 5 seconds.
+    text: 'Hey, I''m a right knob talking.
+
+      Press next to skip typing.
+
+      Press
+      next to proceed to next conversation.'
+    charactersPerSecond: 50
+  - sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    side: 2
+    text: 'Hey, I''m a center knob talking.
+
+      Press next to skip typing.
+
+      Press
+      next to proceed to next conversation.'
+    charactersPerSecond: 50
   dialogCanvasPrefab: {fileID: 6996494406907155992, guid: 274e035b4de454657bde818b0352f78b, type: 3}

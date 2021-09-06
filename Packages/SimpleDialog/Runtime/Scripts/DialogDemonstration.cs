@@ -1,19 +1,40 @@
+using System;
+using CodeExtensions;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace SimpleDialog
 {
     public class DialogDemonstration : MonoBehaviour
     {
-        [SerializeField] private DialogCharacter dialogCharacter;
+        [SerializeField] private DialogScriptableObject dialogScriptableObject;
 
         private void OnValidate()
         {
-            dialogCharacter = CodeExtensions.ScriptableObject.FindIfNull(dialogCharacter);
+            dialogScriptableObject = CodeExtensions.ScriptableObject.FindIfNull(dialogScriptableObject);
         }
 
         private void OnEnable()
         {
-            dialogCharacter.DisplayDialog();
+            dialogScriptableObject.dialogStart.AddPersistentListener(OnDialogStart);
+            dialogScriptableObject.dialogEnd.AddPersistentListener(OnDialogEnd);
+            dialogScriptableObject.DisplayDialog();
+        }
+
+        private void OnDisable()
+        {
+            dialogScriptableObject.dialogStart.AddPersistentListener(OnDialogStart);
+            dialogScriptableObject.dialogEnd.AddPersistentListener(OnDialogEnd);
+        }
+
+        private void OnDialogStart()
+        {
+            Functions.Pause();
+        }
+
+        private void OnDialogEnd()
+        {
+            Functions.Resume();
         }
     }
 }

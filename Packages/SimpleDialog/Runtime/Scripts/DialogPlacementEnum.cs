@@ -1,6 +1,6 @@
 namespace SimpleDialog
 {
-    public enum DialogPlacement
+    public enum DialogPlacementEnum
     {
         Left,
         Right,

@@ -4,10 +4,11 @@ using UnityEngine;
 namespace SimpleDialog
 {
     [Serializable]
-    public struct DialogData
+    public struct DialogDataStruct
     {
         public Sprite sprite;
-        public DialogPlacement side;
+        public DialogPlacementEnum side;
         [Multiline] public string text;
+        public float charactersPerSecond;
     }
 }
