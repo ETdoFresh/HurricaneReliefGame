@@ -14,8 +14,20 @@
         "com.etdofresh_unity.code-extensions": "0.0.2"
       }
     },
+    "com.etdofresh_unity.simple-rigidbody-movement": {
+      "version": "file:SimpleRigidbodyMovement",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "com.etdofresh_unity.unity-package-template": {
       "version": "file:UnityPackageTemplate",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
+    "com.etdofresh_unity.unity-package-template-min": {
+      "version": "file:UnityPackageTemplateMinimum",
       "depth": 0,
       "source": "embedded",
       "dependencies": {}

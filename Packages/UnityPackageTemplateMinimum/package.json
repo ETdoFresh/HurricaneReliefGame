@@ -1,0 +1,7 @@
+{
+  "name": "com.etdofresh_unity.unity-package-template-min",
+  "version": "1.0.0",
+  "displayName": "_Unity Package Template Minimum by ET",
+  "description": "A minimum empty package template for Unity Package Manager.",
+  "type": "library"
+}

@@ -1,0 +1,22 @@
+{
+  "name": "com.etdofresh_unity.simple-rigidbody-movement",
+  "version": "1.0.0",
+  "displayName": "_Simple Rigidbody Movement by ET",
+  "description": "A library to provide simple movement input to rigidbodies.",
+  "unity": "2017.4",
+  "unityRelease": "0f1",
+  "documentationUrl": "https://github.com/ETdoFresh/SimpleRigidbodyMovement/blob/master/README.md",
+  "changelogUrl": "https://github.com/ETdoFresh/SimpleRigidbodyMovement/blob/master/CHANGELOG.md",
+  "licensesUrl": "https://github.com/ETdoFresh/SimpleRigidbodyMovement/blob/master/LICENSE.md",
+  "keywords": [
+    "ketword1",
+    "keyword2",
+    "keyword3"
+  ],
+  "author": {
+    "name": "ETdoFresh",
+    "email": "ETdoFresh@gmail.com",
+    "url": "https://www.etdofresh.com"
+  },
+  "type": "library"
+}

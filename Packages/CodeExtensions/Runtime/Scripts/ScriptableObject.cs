@@ -47,6 +47,11 @@ namespace CodeExtensions
         {
             return instance ? instance : Find<T>();
         }
+        
+        public static T FindIfNull<T>(T instance, string name) where T : UnityEngine.ScriptableObject
+        {
+            return instance ? instance : Find<T>(name);
+        }
 
 #if UNITY_EDITOR
         [UnityEditor.MenuItem("Assets/Create/Asset from ScriptableObject", true)]
