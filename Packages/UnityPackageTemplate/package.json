@@ -1,0 +1,22 @@
+{
+  "name": "com.etdofresh_unity.unity-package-template",
+  "version": "1.0.0",
+  "displayName": "_Unity Package Template by ET",
+  "description": "An empty package template for Unity Package Manager.",
+  "unity": "2017.4",
+  "unityRelease": "0f1",
+  "documentationUrl": "https://github.com/ETdoFresh/UnityPackageManager/blob/master/README.md",
+  "changelogUrl": "https://github.com/ETdoFresh/UnityPackageManager/blob/master/CHANGELOG.md",
+  "licensesUrl": "https://github.com/ETdoFresh/UnityPackageManager/blob/master/LICENSE.md",
+  "keywords": [
+    "ketword1",
+    "keyword2",
+    "keyword3"
+  ],
+  "author": {
+    "name": "ETdoFresh",
+    "email": "ETdoFresh@gmail.com",
+    "url": "https://www.etdofresh.com"
+  },
+  "type": "library"
+}

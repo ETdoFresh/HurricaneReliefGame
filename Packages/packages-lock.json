@@ -14,6 +14,12 @@
         "com.etdofresh_unity.code-extensions": "0.0.2"
       }
     },
+    "com.etdofresh_unity.unity-package-template": {
+      "version": "file:UnityPackageTemplate",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "com.unity.ext.nunit": {
       "version": "1.0.6",
       "depth": 1,
