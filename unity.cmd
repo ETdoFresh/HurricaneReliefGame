@@ -1,0 +1,1 @@
+@start "Unity" "C:\Program Files\Unity\Hub\Editor\2020.3.15f2\Editor\Unity.exe" -projectPath .

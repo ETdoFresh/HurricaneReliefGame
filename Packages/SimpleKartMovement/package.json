@@ -1,0 +1,7 @@
+{
+  "name": "com.etdofresh_unity.simple-kart-movement",
+  "version": "1.0.0",
+  "displayName": "_Simple Kart Movement by E.T.",
+  "description": "A simple kart movement controller.",
+  "type": "library"
+}
