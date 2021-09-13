@@ -18,5 +18,8 @@
     "email": "ETdoFresh@gmail.com",
     "url": "https://www.etdofresh.com"
   },
-  "type": "library"
+  "type": "library",
+  "dependencies": {
+    "com.unity.inputsystem": "1.0.2"
+  }
 }

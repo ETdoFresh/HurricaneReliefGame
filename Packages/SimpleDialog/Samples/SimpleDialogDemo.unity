@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657815, g: 0.49641192, b: 0.57481617, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 217605947}
   - component: {fileID: 217605946}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -324,31 +324,13 @@ GameObject:
   - component: {fileID: 834080865}
   - component: {fileID: 834080864}
   - component: {fileID: 834080868}
-  - component: {fileID: 834080863}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &834080863
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 834080862}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4361bb60be9104b888771d1e05a64506, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inputActionAsset: {fileID: -944628639613478452, guid: 5bb3ec6f039af47be9808a8faaae04a1, type: 3}
-  movementForce: 20
-  jumpForce: 8
-  enableMovement: 1
-  enableJump: 0
 --- !u!65 &834080864
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -553,7 +535,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fd7f861fc484e06b475f6daea0163e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogScriptableObject: {fileID: 11400000, guid: f94622fd4bdc242a49cdf58d56207a63, type: 2}
+  dialogScriptableObject: {fileID: 11400000, guid: f94622fd4bdc242a49cdf58d56207a63,
+    type: 2}
+  restartAction:
+    m_Name: Restart
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: 863891cc-400a-4c87-aee1-282e424ac4d9
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: a324f020-e870-411b-80f4-e8957e1d87e8
+      m_Path: <Keyboard>/r
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Restart
+      m_Flags: 0
 --- !u!4 &1741743017
 Transform:
   m_ObjectHideFlags: 0
@@ -581,7 +580,6 @@ GameObject:
   - component: {fileID: 2081756243}
   - component: {fileID: 2081756242}
   - component: {fileID: 2081756241}
-  - component: {fileID: 2081756246}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -681,20 +679,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2081756246
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2081756240}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4361bb60be9104b888771d1e05a64506, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inputActionAsset: {fileID: -944628639613478452, guid: 5bb3ec6f039af47be9808a8faaae04a1, type: 3}
-  movementForce: 20
-  jumpForce: 8
-  enableMovement: 1
-  enableJump: 1

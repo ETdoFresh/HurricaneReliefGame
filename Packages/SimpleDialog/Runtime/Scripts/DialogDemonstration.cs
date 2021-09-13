@@ -1,13 +1,14 @@
-using System;
 using CodeExtensions;
 using UnityEngine;
-using UnityEngine.Events;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 namespace SimpleDialog
 {
     public class DialogDemonstration : MonoBehaviour
     {
         [SerializeField] private DialogScriptableObject dialogScriptableObject;
+        [SerializeField] private InputAction restartAction;
 
         private void OnValidate()
         {
@@ -19,12 +20,15 @@ namespace SimpleDialog
             dialogScriptableObject.dialogStart.AddPersistentListener(OnDialogStart);
             dialogScriptableObject.dialogEnd.AddPersistentListener(OnDialogEnd);
             dialogScriptableObject.DisplayDialog();
+            restartAction.performed += OnRestart;
+            restartAction.Enable();
         }
 
         private void OnDisable()
         {
-            dialogScriptableObject.dialogStart.AddPersistentListener(OnDialogStart);
-            dialogScriptableObject.dialogEnd.AddPersistentListener(OnDialogEnd);
+            dialogScriptableObject.dialogStart.RemovePersistentListener(OnDialogStart);
+            dialogScriptableObject.dialogEnd.RemovePersistentListener(OnDialogEnd);
+            restartAction.performed -= OnRestart;
         }
 
         private void OnDialogStart()
@@ -35,6 +39,11 @@ namespace SimpleDialog
         private void OnDialogEnd()
         {
             Functions.Resume();
+        }
+
+        private void OnRestart(InputAction.CallbackContext obj)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }

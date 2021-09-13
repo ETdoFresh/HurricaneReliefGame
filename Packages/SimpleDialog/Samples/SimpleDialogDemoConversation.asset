@@ -12,6 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b21b4044f68442abba32428d8b8d36a8, type: 3}
   m_Name: SimpleDialogDemoConversation
   m_EditorClassIdentifier: 
+  dialogStart:
+    m_PersistentCalls:
+      m_Calls: []
+  dialogEnd:
+    m_PersistentCalls:
+      m_Calls: []
   conversation:
   - sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
     side: 0
@@ -40,4 +46,5 @@ MonoBehaviour:
       Press
       next to proceed to next conversation.'
     charactersPerSecond: 50
-  dialogCanvasPrefab: {fileID: 6996494406907155992, guid: 274e035b4de454657bde818b0352f78b, type: 3}
+  dialogCanvasPrefab: {fileID: 6996494406907155992, guid: 274e035b4de454657bde818b0352f78b,
+    type: 3}

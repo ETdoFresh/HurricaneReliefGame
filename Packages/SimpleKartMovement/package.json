@@ -1,7 +1,11 @@
 {
   "name": "com.etdofresh_unity.simple-kart-movement",
   "version": "1.0.0",
-  "displayName": "_Simple Kart Movement by E.T.",
+  "displayName": "_Simple Kart Movement by ET",
   "description": "A simple kart movement controller.",
-  "type": "library"
+  "type": "library",
+  "dependencies": {
+    "com.unity.cinemachine": "2.6.10",
+    "com.unity.inputsystem": "1.0.2"
+  }
 }

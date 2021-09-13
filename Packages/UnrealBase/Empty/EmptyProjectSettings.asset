@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6a0b54e9eff60648842fc7896f9cb8e, type: 3}
+  m_Name: EmptyProjectSettings
+  m_EditorClassIdentifier: 
+  defaultGameMode: {fileID: 11400000, guid: f6069c46925f9444fa80fef72aa7d7a1, type: 2}
+  gameDefaultMap: {fileID: 0}
+  transitionMap: {fileID: 0}
+  serverDefaultMap: {fileID: 0}
+  gameDefaultMapName: 
+  transitionMapName: 
+  serverDefaultMapName: 

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d782e15b6924e9db903106d140993d6, type: 3}
+  m_Name: EmptyGameMode
+  m_EditorClassIdentifier: 
+  useSeamlessTravel: 0
+  pauseable: 1
+  startPlayersAsSpectators: 0
+  delayedStart: 0
+  minimumResponseDelay: 1
+  defaultPlayerName: 
+  inactivePlayerStateLifeSpan: 300
+  startWithTickEnabled: 1
+  defaultPawnClass: {fileID: 11400000, guid: abd0394340d376d43939973ed9d94765, type: 2}
+  hudClass: {fileID: 11400000, guid: 83b6c4f7696c9184eb5332a0612eb042, type: 2}
+  playerControllerClass: {fileID: 11400000, guid: 3cf28e472e64c244587efc85ddf6d4bf,
+    type: 2}
+  spectatorClass: {fileID: 11400000, guid: 9b0ebe0e61263704bb2cedce078370c1, type: 2}
+  playerStateClass: {fileID: 11400000, guid: 270f00214b6a47d4da97f18abc4de216, type: 2}
+  gameStateClass: {fileID: 11400000, guid: 023ed1c779aaf5640ba237943620f92e, type: 2}
