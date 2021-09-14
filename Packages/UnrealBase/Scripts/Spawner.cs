@@ -6,11 +6,12 @@ namespace UnrealBase
     {
         public GameObject prefab;
 
-        public GameObject Spawn(Transform parent = null)
+        public static GameObject Spawn(Spawner spawner, Transform parent = null)
         {
-            if (!prefab) return null;
-            var newGameObject = Instantiate(prefab, parent);
-            newGameObject.name = prefab.name;
+            if (!spawner) return null;
+            if (!spawner.prefab) return null;
+            var newGameObject = Instantiate(spawner.prefab, parent);
+            newGameObject.name = spawner.prefab.name;
             return newGameObject;
         }
     }

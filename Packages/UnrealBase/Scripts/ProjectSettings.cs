@@ -1,6 +1,5 @@
-using System;
 using UnityEngine;
-using static CodeExtensions.ScriptableObject;
+using static CodeExtensions.ObjectExtension;
 
 namespace UnrealBase
 {

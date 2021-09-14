@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static CodeExtensions.ObjectExtension;
 
 namespace SimpleRigidbodyMovement
 {
@@ -15,7 +16,7 @@ namespace SimpleRigidbodyMovement
         private bool _jumpQueued;
         private void OnValidate()
         {
-            inputActionAsset = CodeExtensions.ScriptableObject.FindIfNull(inputActionAsset, "SimpleRigidbodyControls");
+            inputActionAsset = FindIfNull(inputActionAsset, "SimpleRigidbodyControls");
         }
 
         private void Awake()

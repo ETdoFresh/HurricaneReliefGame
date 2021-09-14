@@ -1,8 +1,6 @@
-using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UIElements;
-using static CodeExtensions.ScriptableObject;
+using static CodeExtensions.ObjectExtension;
 
 namespace UnrealBase
 {
@@ -11,6 +9,7 @@ namespace UnrealBase
         private static UnrealManager singleton;
         
         [SerializeField] private ProjectSettings projectSettings;
+        [SerializeField] private GameObject playerCameraManagerPrefab;
 
         [RuntimeInitializeOnLoadMethod]
         private static void CreateUnrealManagerSingleton()
@@ -31,6 +30,7 @@ namespace UnrealBase
         private void OnValidate()
         {
             projectSettings = FindIfNull(projectSettings, "ProjectSettings");
+            playerCameraManagerPrefab = FindIfNull(playerCameraManagerPrefab, "PlayerCameraManager");
         }
 
         private void Awake()
@@ -60,7 +60,7 @@ namespace UnrealBase
             var gameMode = projectSettings.defaultGameMode;
             if (worldSettingsReference && worldSettingsReference.worldSettings && worldSettingsReference.worldSettings.gameModeOverride)
                 gameMode = worldSettingsReference.worldSettings.gameModeOverride;
-            gameMode.StartGame();
+            gameMode.StartGame(playerCameraManagerPrefab);
         }
     }
 }

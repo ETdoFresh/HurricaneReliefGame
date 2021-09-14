@@ -2,6 +2,7 @@ using CodeExtensions;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using static CodeExtensions.ObjectExtension;
 
 namespace SimpleDialog
 {
@@ -12,7 +13,7 @@ namespace SimpleDialog
 
         private void OnValidate()
         {
-            dialogScriptableObject = CodeExtensions.ScriptableObject.FindIfNull(dialogScriptableObject);
+            dialogScriptableObject = FindIfNull(dialogScriptableObject);
         }
 
         private void OnEnable()

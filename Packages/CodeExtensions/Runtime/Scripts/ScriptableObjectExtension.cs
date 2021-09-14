@@ -1,58 +1,11 @@
 using System;
-using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
 namespace CodeExtensions
 {
-    public static class ScriptableObject
+    public static class ScriptableObjectExtension
     {
-        public static T Find<T>() where T : UnityEngine.ScriptableObject
-        {
-#if UNITY_EDITOR
-            var t = typeof(T).Name;
-            var guids = UnityEditor.AssetDatabase.FindAssets($"t:{t}");
-            var assetPath = UnityEditor.AssetDatabase.GUIDToAssetPath(guids[0]);
-            var asset = UnityEditor.AssetDatabase.LoadAssetAtPath<T>(assetPath);
-            return asset;
-#endif
-        }
-        
-        public static T Find<T>(string name) where T : UnityEngine.ScriptableObject
-        {
-#if UNITY_EDITOR
-            var t = typeof(T).Name;
-            var guids = UnityEditor.AssetDatabase.FindAssets($"t:{t} {name}");
-            var assetPath = UnityEditor.AssetDatabase.GUIDToAssetPath(guids[0]);
-            var asset = UnityEditor.AssetDatabase.LoadAssetAtPath<T>(assetPath);
-            return asset;
-#endif
-        }
-
-        public static IEnumerable<T> FindAll<T>() where T : UnityEngine.ScriptableObject
-        {
-#if UNITY_EDITOR
-            var t = typeof(T).Name;
-            var guids = UnityEditor.AssetDatabase.FindAssets($"t:{t}");
-            foreach (var guid in guids)
-            {
-                var assetPath = UnityEditor.AssetDatabase.GUIDToAssetPath(guid);
-                var asset = UnityEditor.AssetDatabase.LoadAssetAtPath<T>(assetPath);
-                yield return asset;
-            }
-#endif
-        }
-
-        public static T FindIfNull<T>(T instance) where T : UnityEngine.ScriptableObject
-        {
-            return instance ? instance : Find<T>();
-        }
-        
-        public static T FindIfNull<T>(T instance, string name) where T : UnityEngine.ScriptableObject
-        {
-            return instance ? instance : Find<T>(name);
-        }
-
 #if UNITY_EDITOR
         [UnityEditor.MenuItem("Assets/Create/Asset from ScriptableObject", true)]
         private static bool CreateScriptableObjAsAssetValidator()

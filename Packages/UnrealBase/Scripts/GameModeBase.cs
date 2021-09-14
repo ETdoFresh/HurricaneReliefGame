@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Cinemachine;
 using UnityEngine;
-using static CodeExtensions.ScriptableObject;
+using static CodeExtensions.ObjectExtension;
+using static CodeExtensions.Functions;
+using static UnrealBase.Spawner;
 
 namespace UnrealBase
 {
@@ -23,6 +25,8 @@ namespace UnrealBase
         public SpectatorSpawner spectatorClass;
         public PlayerStateSpawner playerStateClass;
         public GameStateSpawner gameStateClass;
+        private GameObject _playerCameraManagerPrefab;
+        private CinemachineVirtualCamera _playerCameraManager;
 
         private void OnValidate()
         {
@@ -43,6 +47,7 @@ namespace UnrealBase
 
         protected virtual void InitGame()
         {
+            _playerCameraManager = Spawn<CinemachineVirtualCamera>(_playerCameraManagerPrefab);
         }
 
         protected virtual void PreLogin()
@@ -72,24 +77,28 @@ namespace UnrealBase
 
         protected virtual void SpawnDefaultPawnAtTransform()
         {
-            var pawn = defaultPawnClass.Spawn();
-            var hud = hudClass.Spawn();
-            var playerController = playerControllerClass.Spawn();
-            var playerState = playerStateClass.Spawn();
-            var gameState = gameStateClass.Spawn();
+            var pawn = Spawn(defaultPawnClass);
+            var hud = Spawn(hudClass);
+            var playerController = Spawn(playerControllerClass);
+            var playerState = Spawn(playerStateClass);
+            var gameState = Spawn(gameStateClass);
             var playerStart = FindObjectOfType<PlayerStart>();
             if (pawn && playerStart)
             {
                 pawn.transform.position = playerStart.transform.position;
             }
+
+            var pawnCamera = pawn.GetComponentInChildren<CinemachineVirtualCamera>();
+            _playerCameraManager.Follow = pawnCamera ? pawnCamera.transform : pawn.transform;
         }
 
         protected virtual void Logout()
         {
         }
 
-        public void StartGame()
+        public void StartGame(GameObject playerCameraManagerPrefab)
         {
+            _playerCameraManagerPrefab = playerCameraManagerPrefab;
             InitGame();
             PreLogin();
             PostLogin();
