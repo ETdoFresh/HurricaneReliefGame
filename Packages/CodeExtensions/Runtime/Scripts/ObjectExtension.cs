@@ -13,6 +13,8 @@ namespace CodeExtensions
             var assetPath = UnityEditor.AssetDatabase.GUIDToAssetPath(guids[0]);
             var asset = UnityEditor.AssetDatabase.LoadAssetAtPath<T>(assetPath);
             return asset;
+#else
+            return null;
 #endif
         }
         
@@ -24,6 +26,8 @@ namespace CodeExtensions
             var assetPath = UnityEditor.AssetDatabase.GUIDToAssetPath(guids[0]);
             var asset = UnityEditor.AssetDatabase.LoadAssetAtPath<T>(assetPath);
             return asset;
+#else
+            return null;
 #endif
         }
 
@@ -38,6 +42,8 @@ namespace CodeExtensions
                 var asset = UnityEditor.AssetDatabase.LoadAssetAtPath<T>(assetPath);
                 yield return asset;
             }
+#else
+            yield return null;
 #endif
         }
 

@@ -91,6 +91,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1635494469020168101}
   - component: {fileID: 6392530312091976748}
+  - component: {fileID: -4494227747109149433}
+  - component: {fileID: 6495798804304795253}
+  - component: {fileID: -2169493899032888483}
   m_Layer: 3
   m_Name: DefaultPawn
   m_TagString: Untagged
@@ -126,3 +129,67 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &-4494227747109149433
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3906314944363514236}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
+--- !u!114 &6495798804304795253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3906314944363514236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8623da57a90c43d0a918003370051999, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseTurnRate: 45
+  baseLookUpRate: 45
+  addDefaultMovementBindings: 1
+  _turnInputAction:
+    m_Name: Turn Input
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: cd2c6cbb-4d32-4067-930e-9be655ddd799
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 13b8d1c8-4c5a-404d-9622-52d7b144d59b
+      m_Path: <Mouse>/delta/x
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Turn Input
+      m_Flags: 0
+--- !u!114 &-2169493899032888483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3906314944363514236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d65f88b7ce48454d97802a7f5b88468f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed: 12
+  acceleration: 40
+  deceleration: 80
+  turningBoost: 0
+  velocity: {x: 0, y: 0, z: 0}

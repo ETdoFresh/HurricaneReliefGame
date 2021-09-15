@@ -14,5 +14,10 @@ namespace UnrealBase
             newGameObject.name = spawner.prefab.name;
             return newGameObject;
         }
+        
+        public static T Spawn<T>(Spawner spawner, Transform parent = null) where T : Component
+        {
+            return Spawn(spawner, parent).GetComponentInChildren<T>();
+        }
     }
 }

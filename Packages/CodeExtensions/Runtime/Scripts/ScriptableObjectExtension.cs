@@ -26,7 +26,9 @@ namespace CodeExtensions
             }
 
             // load the asset as a monoScript
-            var monoScript = (UnityEditor.MonoScript)UnityEditor.AssetDatabase.LoadAssetAtPath(assetPath, typeof(UnityEditor.MonoScript));
+            var monoScript =
+                (UnityEditor.MonoScript) UnityEditor.AssetDatabase.LoadAssetAtPath(assetPath,
+                    typeof(UnityEditor.MonoScript));
             if (monoScript == null)
             {
                 return false;
@@ -68,6 +70,6 @@ namespace CodeExtensions
                 Debug.LogException(e);
             }
         }
-    }
 #endif
+    }
 }

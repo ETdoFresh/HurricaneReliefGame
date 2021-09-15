@@ -17,19 +17,5 @@ namespace CodeExtensions
             Time.timeScale = 1;
             AudioListener.pause = false;
         }
-
-        public static GameObject Spawn(GameObject prefab)
-        {
-            var newGameObject = Object.Instantiate(prefab);
-            newGameObject.name = prefab.name;
-            return newGameObject;
-        }
-
-        public static T Spawn<T>(GameObject prefab) where T : Component
-        {
-            var newGameObject = Object.Instantiate(prefab);
-            newGameObject.name = prefab.name;
-            return newGameObject.GetComponentInChildren<T>();
-        }
     }
 }

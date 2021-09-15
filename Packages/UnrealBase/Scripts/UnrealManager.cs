@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using static CodeExtensions.ObjectExtension;
 
@@ -10,6 +11,7 @@ namespace UnrealBase
         
         [SerializeField] private ProjectSettings projectSettings;
         [SerializeField] private GameObject playerCameraManagerPrefab;
+        [SerializeField] private InputActionAsset inputActionAsset;
 
         [RuntimeInitializeOnLoadMethod]
         private static void CreateUnrealManagerSingleton()
@@ -39,11 +41,20 @@ namespace UnrealBase
             {
                 singleton = this;
                 DontDestroyOnLoad(gameObject);
-                OnSceneLoaded(SceneManager.GetActiveScene(), LoadSceneMode.Single);
                 SceneManager.sceneLoaded += OnSceneLoaded;
             }
             else
                 Destroy(gameObject);
+        }
+
+        private void OnEnable()
+        {
+            if (inputActionAsset) inputActionAsset.Enable();
+        }
+
+        private void OnDisable()
+        {
+            if (inputActionAsset) inputActionAsset.Disable();
         }
 
         private void OnDestroy()
