@@ -15,7 +15,7 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_FogColor: {r: 0.69143826, g: 0.7363365, b: 0.8018868, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.01
   m_LinearFogStart: 0
@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 625713272979dfe48b7823bc2722b459, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: cb739a7cb945514409271b2a263d8ffc, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.6653924, g: 0.69539726, b: 0.79011834, a: 1}
+  m_IndirectSpecularColor: {r: 0.37576357, g: 0.61515385, b: 0.7001525, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -380,6 +380,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1712300977}
   - component: {fileID: 1712300976}
+  - component: {fileID: 1712300978}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -463,6 +464,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 31.34, y: 36.4, z: 0}
+--- !u!114 &1712300978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1712300975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39574783032b3c4419935a71c8514722, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1841545142
 PrefabInstance:
   m_ObjectHideFlags: 0
