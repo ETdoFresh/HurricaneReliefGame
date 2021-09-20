@@ -14,9 +14,15 @@ namespace UnrealBase
         protected override void Awake()
         {
             base.Awake();
-            SetFocus();
+            SetInputModeGameOnly();
             _pitch = transform.eulerAngles.x;
             _yaw = transform.eulerAngles.y;
+            Application.focusChanged += TestFocus;
+        }
+
+        private void TestFocus(bool obj)
+        {
+            Debug.Log($"Focus Change: {obj}");
         }
 
         public override void Possess(Pawn newPawn)
@@ -66,13 +72,13 @@ namespace UnrealBase
             _yaw = val;
         }
 
-        public void SetFocus()
+        public void SetInputModeGameOnly()
         {
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
         }
 
-        public void ReleaseFocus()
+        public void SetInputModeUIOnly()
         {
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
