@@ -3,10 +3,9 @@ using CodeExtensions;
 using UnityEngine;
 using static CodeExtensions.GameObjectExtension;
 using static CodeExtensions.ObjectExtension;
-using static CodeExtensions.TransformExtension;
-using static UnrealBase.Spawner;
+using static UnrealBlankTemplate.Spawner;
 
-namespace UnrealBase
+namespace UnrealBlankTemplate
 {
     [CreateAssetMenu(menuName = "Unreal Base/Game Mode Base", fileName = "GameModeBase", order = 0)]
     public class GameModeBase : ScriptableObject

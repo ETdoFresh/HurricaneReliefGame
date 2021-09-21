@@ -1,7 +1,6 @@
-using CodeExtensions;
 using UnityEngine;
 
-namespace UnrealBase
+namespace UnrealBlankTemplate
 {
     public class Pawn : MonoBehaviour
     {

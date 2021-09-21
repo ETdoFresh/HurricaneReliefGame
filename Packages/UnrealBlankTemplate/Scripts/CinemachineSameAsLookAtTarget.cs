@@ -1,7 +1,7 @@
 ﻿using Cinemachine;
 using UnityEngine;
 
-namespace UnrealBase
+namespace UnrealBlankTemplate
 {
     public class CinemachineSameAsLookAtTarget : CinemachineComponentBase
     {

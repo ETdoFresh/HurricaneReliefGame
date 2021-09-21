@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace UnrealBase
+namespace UnrealBlankTemplate
 {
     public class LightDirection : MonoBehaviour
     {

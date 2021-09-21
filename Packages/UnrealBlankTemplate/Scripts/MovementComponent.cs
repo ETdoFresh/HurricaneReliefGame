@@ -1,7 +1,7 @@
 ﻿using CodeExtensions;
 using UnityEngine;
 
-namespace UnrealBase
+namespace UnrealBlankTemplate
 {
     [RequireComponent(typeof(Rigidbody))]
     public class MovementComponent : MonoBehaviour

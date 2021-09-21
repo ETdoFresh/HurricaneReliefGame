@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using static CodeExtensions.ObjectExtension;
 
-namespace UnrealBase
+namespace UnrealBlankTemplate
 {
     public class UnrealManager : MonoBehaviour
     {

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace UnrealBase
+namespace UnrealBlankTemplate
 {
     public abstract class Spawner : ScriptableObject
     {

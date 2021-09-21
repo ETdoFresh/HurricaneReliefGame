@@ -2,7 +2,7 @@ using Cinemachine;
 using CodeExtensions;
 using UnityEngine;
 
-namespace UnrealBase
+namespace UnrealBlankTemplate
 {
     public class PlayerController : Controller
     {

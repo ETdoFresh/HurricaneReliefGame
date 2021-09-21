@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace UnrealBase
+namespace UnrealBlankTemplate
 {
     [RequireComponent(typeof(MovementComponent))]
     public class DefaultPawn : Pawn

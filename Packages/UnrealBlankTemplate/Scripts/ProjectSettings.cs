@@ -1,7 +1,7 @@
 using UnityEngine;
 using static CodeExtensions.ObjectExtension;
 
-namespace UnrealBase
+namespace UnrealBlankTemplate
 {
     [CreateAssetMenu(menuName = "Unreal Base/Project Settings", fileName = "ProjectSettings", order = 0)]
     public class ProjectSettings : ScriptableObject
