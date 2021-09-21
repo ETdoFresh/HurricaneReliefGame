@@ -1,7 +1,0 @@
-{
-  "name": "com.etdofresh_unity.unreal-base",
-  "version": "0.0.0",
-  "displayName": "_Unreal Base by ET",
-  "description": "A set of scripts that use Unreal Editor project structure and naming conventions.",
-  "type": "library"
-}

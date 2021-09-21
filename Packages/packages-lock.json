@@ -43,11 +43,23 @@
       "source": "embedded",
       "dependencies": {}
     },
-    "com.etdofresh_unity.unreal-base": {
-      "version": "file:UnrealBase",
+    "com.etdofresh_unity.unreal-blank-template": {
+      "version": "file:UnrealBlankTemplate",
       "depth": 0,
       "source": "embedded",
-      "dependencies": {}
+      "dependencies": {
+        "com.unity.cinemachine": "0.0.0",
+        "com.unity.inputsystem": "0.0.0",
+        "com.unity.render-pipelines.universal": "0.0.0"
+      }
+    },
+    "com.etdofresh_unity.unreal-third-person-template": {
+      "version": "file:UnrealThirdPersonTemplate",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {
+        "com.etdofresh_unity.unreal-blank-template": "0.0.0"
+      }
     },
     "com.unity.cinemachine": {
       "version": "2.6.10",

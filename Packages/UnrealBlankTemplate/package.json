@@ -1,0 +1,12 @@
+{
+  "name": "com.etdofresh_unity.unreal-blank-template",
+  "version": "0.0.0",
+  "displayName": "_Unreal Blank Template by ET",
+  "description": "A set of scripts that use Unreal Editor project structure and naming conventions.",
+  "type": "library",
+  "dependencies": {
+    "com.unity.cinemachine": "0.0.0",
+    "com.unity.inputsystem": "0.0.0",
+    "com.unity.render-pipelines.universal": "0.0.0"
+  }
+}

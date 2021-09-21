@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Packages/com.etdofresh_unity.unreal-base/Samples/UnrealSample.unity
+    path: Packages/com.etdofresh_unity.unreal-blank-template/Samples/UnrealDefault.unity
     guid: b0a6e96ac406573419bfa9700a02919d
   - enabled: 0
     path: 

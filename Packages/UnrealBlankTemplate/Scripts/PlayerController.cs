@@ -32,6 +32,9 @@ namespace UnrealBase
             var pawnCameraTransform = pawnCamera ? pawnCamera.transform : null;
             _playerCameraManager.Follow = pawnCamera ? pawnCameraTransform : pawn.transform;
             _playerCameraManager.LookAt = pawnCamera ? pawnCameraTransform : transform;
+            transform.rotation = pawn.transform.rotation;
+            _pitch = transform.eulerAngles.x;
+            _yaw = transform.eulerAngles.y;
         }
 
         public void AddPitchInput(float val)
