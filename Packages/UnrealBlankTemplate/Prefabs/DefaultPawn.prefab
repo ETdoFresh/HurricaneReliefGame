@@ -157,25 +157,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8623da57a90c43d0a918003370051999, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  autoPossessPlayer: -1
   baseTurnRate: 45
   baseLookUpRate: 45
   addDefaultMovementBindings: 1
-  _turnInputAction:
-    m_Name: Turn Input
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: cd2c6cbb-4d32-4067-930e-9be655ddd799
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 13b8d1c8-4c5a-404d-9622-52d7b144d59b
-      m_Path: <Mouse>/delta/x
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Turn Input
-      m_Flags: 0
 --- !u!114 &-2169493899032888483
 MonoBehaviour:
   m_ObjectHideFlags: 0

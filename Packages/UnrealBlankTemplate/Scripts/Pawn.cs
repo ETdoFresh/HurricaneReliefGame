@@ -4,6 +4,8 @@ namespace UnrealBlankTemplate
 {
     public class Pawn : MonoBehaviour
     {
+        public AutoPossessPlayerEnum autoPossessPlayer = AutoPossessPlayerEnum.Disabled;
+
         private Controller _controller;
 
         public void AddControllerPitchInput(float val)

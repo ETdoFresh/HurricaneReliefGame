@@ -8,8 +8,11 @@ namespace UnrealBlankTemplate
     {
         private CinemachineVirtualCamera _playerCameraManager;
 
+        private int _controllerId;
         private float _pitch;
         private float _yaw;
+
+        public int MyPlayerIndex => _controllerId;
 
         protected override void Awake()
         {
@@ -85,6 +88,11 @@ namespace UnrealBlankTemplate
         {
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
+        }
+        
+        public void SetPlayerControllerID(int controllerId)
+        {
+            _controllerId = controllerId;
         }
     }
 }

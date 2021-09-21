@@ -1,4 +1,5 @@
-﻿using Cinemachine;
+﻿using System.Linq;
+using Cinemachine;
 using CodeExtensions;
 using UnityEngine;
 using static CodeExtensions.GameObjectExtension;
@@ -78,17 +79,23 @@ namespace UnrealBlankTemplate
 
         protected virtual void SpawnDefaultPawnAtTransform()
         {
-            var pawn = Spawn<Pawn>(defaultPawnClass);
+            var gameState = Spawn(gameStateClass);
             var hud = Spawn(hudClass);
+
             var playerController = Spawn<PlayerController>(playerControllerClass);
             var playerState = Spawn(playerStateClass);
-            var gameState = Spawn(gameStateClass);
-            var playerStart = FindObjectOfType<PlayerStart>();
-
             playerController.AssignPlayerCameraManager(_playerCameraManager);
-
-            if (pawn && playerStart)
-                pawn.CopyTransformFrom(playerStart);
+            
+            var pawn = FindObjectsOfType<Pawn>()
+                .FirstOrDefault(x => (int)x.autoPossessPlayer == playerController.MyPlayerIndex);
+            
+            if (!pawn)
+            {
+                pawn = Spawn<Pawn>(defaultPawnClass);
+                var playerStart = FindObjectOfType<PlayerStart>();
+                if (pawn && playerStart)
+                    pawn.CopyTransformFrom(playerStart);
+            }
 
             if (playerController && pawn)
                 playerController.Possess(pawn);
