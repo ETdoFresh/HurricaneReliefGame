@@ -6,7 +6,7 @@ namespace UnrealBlankTemplate
     {
         public AutoPossessPlayerEnum autoPossessPlayer = AutoPossessPlayerEnum.Disabled;
 
-        private Controller _controller;
+        protected Controller _controller;
 
         public void AddControllerPitchInput(float val)
         {
