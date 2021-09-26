@@ -1044,7 +1044,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 90
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -2015,11 +2015,6 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2280840209683006680, guid: 6d1c350f2dae8c94b8f21e01536c7bd8,
-        type: 3}
-      propertyPath: autoPossessPlayer
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5665220727746406349, guid: 6d1c350f2dae8c94b8f21e01536c7bd8,
         type: 3}
       propertyPath: m_Height
@@ -2088,6 +2083,11 @@ PrefabInstance:
     - target: {fileID: 7513084531181290049, guid: 6d1c350f2dae8c94b8f21e01536c7bd8,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9094841638676950777, guid: 6d1c350f2dae8c94b8f21e01536c7bd8,
+        type: 3}
+      propertyPath: autoPossessPlayer
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

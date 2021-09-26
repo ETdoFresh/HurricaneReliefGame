@@ -43,5 +43,10 @@ namespace UnrealBlankTemplate
             right.Normalize();
             return forward * inputXZ.y + right * inputXZ.x;
         }
+
+        public Controller GetController()
+        {
+            return _controller;
+        }
     }
 }

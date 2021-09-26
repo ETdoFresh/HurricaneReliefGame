@@ -6,6 +6,11 @@ namespace UnrealBlankTemplate
 {
     public class PlayerController : Controller
     {
+        [SerializeField] private bool autoManageActiveCameraTarget = true;
+        [SerializeField] private float inputYawScale = 2.5f;
+        [SerializeField] private float inputPitchScale = -2.5f;
+        [SerializeField] private float inputRollScale = 1f;
+        
         private CinemachineVirtualCamera _playerCameraManager;
 
         private int _controllerId;
@@ -20,18 +25,13 @@ namespace UnrealBlankTemplate
             SetInputModeGameOnly();
             _pitch = transform.eulerAngles.x;
             _yaw = transform.eulerAngles.y;
-            Application.focusChanged += TestFocus;
-        }
-
-        private void TestFocus(bool obj)
-        {
-            Debug.Log($"Focus Change: {obj}");
         }
 
         public override void Possess(Pawn newPawn)
         {
             base.Possess(newPawn);
-            var pawnCamera = pawn.GetComponentInChildren<CinemachineVirtualCamera>();
+            var pawnCamera = (Component)pawn.GetComponentInChildren<CinemachineVirtualCamera>();
+            if (!pawnCamera) pawnCamera = pawn.GetComponentInChildren<Camera>();
             var pawnCameraTransform = pawnCamera ? pawnCamera.transform : null;
             _playerCameraManager.Follow = pawnCamera ? pawnCameraTransform : pawn.transform;
             _playerCameraManager.LookAt = pawnCamera ? pawnCameraTransform : transform;
@@ -42,7 +42,7 @@ namespace UnrealBlankTemplate
 
         public void AddPitchInput(float val)
         {
-            SetPitch(_pitch + val);
+            SetPitch(_pitch + val / inputPitchScale);
             var myTransform = transform;
             myTransform.eulerAngles = myTransform.eulerAngles.SetX(_pitch);
         }
@@ -55,7 +55,7 @@ namespace UnrealBlankTemplate
 
         public void AddYawInput(float val)
         {
-            SetYaw(_yaw + val);
+            SetYaw(_yaw + val / inputYawScale);
             var myTransform = transform;
             myTransform.eulerAngles = myTransform.eulerAngles.SetY(_yaw);
         }

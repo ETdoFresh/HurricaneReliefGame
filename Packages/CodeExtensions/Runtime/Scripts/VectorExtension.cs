@@ -8,6 +8,11 @@ namespace CodeExtensions
         {
             return new Vector2(vector3.x, vector3.z);
         }
+        
+        public static Vector3 GetX0Z(this Vector3 vector3)
+        {
+            return new Vector3(vector3.x, 0, vector3.z);
+        }
 
         public static Vector3 SetXZ(this Vector3 vector3, Vector2 xz)
         {
@@ -47,6 +52,11 @@ namespace CodeExtensions
         public static Vector3 AddY(this Vector3 vector3, float y)
         {
             return vector3.SetY(vector3.y + y);
+        }
+
+        public static Vector3 ToXZVector3(this Vector2 vector2)
+        {
+            return new Vector3(vector2.x, 0, vector2.y);
         }
     }
 }
