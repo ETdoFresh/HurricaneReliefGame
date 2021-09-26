@@ -97,7 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 9cf609974d11bea4a9663ba6d09becab,
+    type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 1c4d11631f40fa24386de5e42ba1b5cd,
     type: 2}
 --- !u!196 &4
@@ -1069,13 +1070,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1372777528}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 5}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0.21, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &1372777532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2015,10 +2016,20 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5665220727746406349, guid: 6d1c350f2dae8c94b8f21e01536c7bd8,
+    - target: {fileID: 1544096313603551256, guid: 6d1c350f2dae8c94b8f21e01536c7bd8,
         type: 3}
-      propertyPath: m_Height
-      value: 2
+      propertyPath: m_ScaleInLightmap
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2375913615025407533, guid: 6d1c350f2dae8c94b8f21e01536c7bd8,
+        type: 3}
+      propertyPath: m_ScaleInLightmap
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3546400464902704822, guid: 6d1c350f2dae8c94b8f21e01536c7bd8,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5665220727746406349, guid: 6d1c350f2dae8c94b8f21e01536c7bd8,
         type: 3}
@@ -2029,6 +2040,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ThirdPersonCharacter
+      objectReference: {fileID: 0}
+    - target: {fileID: 6147557138813455856, guid: 6d1c350f2dae8c94b8f21e01536c7bd8,
+        type: 3}
+      propertyPath: m_ScaleInLightmap
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7513084531181290049, guid: 6d1c350f2dae8c94b8f21e01536c7bd8,
         type: 3}
